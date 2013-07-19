@@ -1,0 +1,78 @@
+#############################################
+ ######  OK I take care of the rest ########
+  #########################################
+
+comma:= ,
+empty:=
+space:= $(empty) $(empty)
+
+
+
+DEBUGFLAGS = -g -DDEBUG
+RELEASEFLAGS = -O3
+
+sources = $(USERSRC)
+
+objects = $(sources:.cpp=.o)
+
+CXX = $(CC)
+
+LDFLAGS = -L$(MDSP3_SRC)/lib
+
+MUDISPLIBS = -lmudisp -linesis -lblocks -lnewran03
+
+DEBUGLIBS = $(MUDISPLIBS:%=%_dbg) $(LIBS)
+
+RELEASELIBS = $(MUDISPLIBS) $(LIBS)
+
+CPPFLAGS = 	$(patsubst %,-I%,$(USERDIRS)) \
+	   	-I$(MDSP3_SRC)/include \
+		-I$(MDSP3_SRC)/include/tnt
+
+
+VPATH = $(subst $(space),:,$(strip $(USERDIRS)))
+
+
+all: $(USERPROJECT)
+
+
+#
+# The Targets
+#
+
+.PHONY: clean distclean
+
+
+$(USERPROJECT): $(objects)
+ifdef DEBUG
+	$(CXX) $(CFLAGS) -o $(USERPROJECT)  $(LDFLAGS) $^ $(DEBUGLIBS)
+else
+	$(CXX) $(CFLAGS) -o $(USERPROJECT)  $(LDFLAGS) $^ $(RELEASELIBS)
+endif
+
+
+clean:
+	rm -f *.o *.d $(TARGET)
+
+distclean:
+	rm -f *.o *.d *~ $(TARGET)
+
+print:
+	@echo vpath = $(VPATH)
+
+#
+# The rules ...
+#
+
+%.o : %.cpp
+ifdef DEBUG
+	$(CXX) $(DEBUGFLAGS) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+else
+	$(CXX) $(RELEASEFLAGS) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+endif
+
+%.d : %.cpp
+	$(CXX) -MM -c $(CFLAGS) $(CPPFLAGS) $< > $@
+
+
+include $(objects:.o=.d)

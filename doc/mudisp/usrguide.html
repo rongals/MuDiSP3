@@ -1,0 +1,71 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+    
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+    
+  <meta name="GENERATOR"
+ content="Mozilla/4.51 [en] (X11; I; Linux 2.2.5-15smp i686) [Netscape]">
+  <title></title>
+</head>
+  <body bgcolor="#d8d8bf">
+  
+<h1> User's Guide</h1>
+ 
+<hr> The main steps for the creation of a simulated systems are: 
+<p>   </p>
+<ol>
+ <li><a href="#step1">Creating your workdesk</a>  </li>
+  <li><a href="usrguide2.html">How the simulator works</a>  </li>
+  <li>Creating a primitive block  </li>
+  <li>Creating a container block  </li>
+  <li>Creating the system  </li>
+  <li>Running the simulation  </li>
+  <li>Tips for an efficient programming in MuDiSP II </li>
+</ol>
+   
+<hr size="3"> 
+<h3><a name="step1">Creating your workdesk</a></h3>
+  The MuDiSP collection of libraries  must be installed on your system and
+you must know the location of it. Contact your system administrator to know
+the full path to the MuDiSP directory and remember it. As an example let's
+suppose that the MuDiSP3 is installed in the following path: 
+<p>  <code>MuDiSP3 Installation Path = /usr/local/mudisp3</code> </p>
+<p>   Next, create a project directory in your personal disk space with a
+subdirectory which will contain your C++ sources. For example if your personal
+home directory is : </p>
+<p> <code>/home/gargiulo</code> </p>
+<p>  you can create the project directory MYPROJECT under <code>/home/gargiulo</code>
+ with the following UNIX&nbsp; commands: </p>
+<p> <code> &gt; cd /home/gargiulo<br>
+ &gt; mkdir MYPROJECT<br>
+ &gt; cd MYPROJECT<br>
+ </code> </p>
+<p>  Then you create a subdirectory of the project dir where to place the
+source code of your system. As an example, create the sources directory <code>src</code>
+this way: </p>
+<p>  <code> &gt; mkdir src<br>
+ </code> </p>
+<p>If you prefere, there is a demo running project in the installation directory.
+An easy way to start programming with MuDiSP3 is to copy the entire demo
+directory with:<br>
+</p>
+<p> <code> &gt; cp -r /usr/local/mudisp3/demoproject ~<br>
+&gt; cd demoproject </code> </p>
+<p>Now you have to edit the first lines of the Makefile in order to reflect
+your system.  Usually you only have to add the <em>cpp</em> files that you
+create in the source directory. The sections of the Makefile to be edited
+are clearly indicated by comments. </p>
+<p>You have all you need to begin to create your personal block library.
+Each block you create will have a couple of files in the <em>src</em> directory:
+myblock.h and myblock.cpp for example. Then the system.h and system.cpp is
+modified in order to include your blocks and,  eventually, other library
+blocks made available by others.  </p>
+<p> In the next section you will discover how the simulator works (not in
+detail)&nbsp; that will help you understand the steps to build your system. 
+ </p>
+<hr width="100%"> <a href="index.html">Back to HOME</a>  <br>
+&nbsp; <br>
+</body>
+</html>

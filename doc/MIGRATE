@@ -1,0 +1,76 @@
+MIGRATION OPERATIONS
+  __  __           ____    _   ____    ____    _____ 
+ |  \/  |  _   _  |  _ \  (_) / ___|  |  _ \  |___ / 
+ | |\/| | | | | | | | | | | | \___ \  | |_) |   |_ \ 
+ | |  | | | |_| | | |_| | | |  ___) | |  __/   ___) |
+ |_|  |_|  \__,_| |____/  |_| |____/  |_|     |____/ 
+                                                     
+
+MU ltirate
+DI gital
+S  ignal
+P  rocessor
+
+If you are an INeSiS user (software bundle containing the MuDiSP2
+package) this file is right for you. 
+ 
+The current release of the simulation environment is not too far from
+the previous one from the user's side. The migration is simply
+obtained through these simple steps:
+
+1--
+save the old version of the Makefile in your project directory
+
+2--
+copy the new Makefile from the location /usr/local/mudisp3/demoproject 
+and place it in your project directory
+
+3--
+merge all the necessary data from the saved old Makefile into the new
+one (you probably want to change the USERPROJECT USERDIRS and USERSRC
+sections)
+
+NOTE: (GCC 3.X USERS)
+
+If you're using Gcc version 3.o or later you may need to change something in your source files as well, to make it compliant to the new gcc release.
+
+Here are some hints:
+
+--- substitute "void main(" with "int main(" in your main.cpp
+
+--- eliminate empty class prototypes, such as "class System:public Block;" found in many main.cpp
+
+--- use really "standard" standard template libraries and includes
+
+
+That's all. 
+
+
+For experts users a couple of lines of explanation. The new Makefiles
+refer to the variable "MDSP3_SRC" which substitutes "INESIS". Also the
+value of this variable must point to the new installation location
+"/usr/local/mudisp3" (previously "/usr/local/inesis"). If you chose
+another directory for installing the simulation engine change the
+provious paths accordingly.
+
+
+**************************************************************
+
+
+MuDiSP3 (Multirate Digital Signal Processor 3)
+Copyright 1999, Luca Simone Ronga
+
+
+ MuDiSP3 is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ MuDiSP3 is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with MuDiSP3; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA

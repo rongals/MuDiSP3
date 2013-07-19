@@ -1,0 +1,26 @@
+/blas.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/cholesky.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/fcscmat.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/fortran.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/index.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/lu.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/qr.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/region1d.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/region2d.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/stpwatch.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/subscrpt.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/tnt.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/tntcmplx.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/tntmath.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/tntreqs.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/transv.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/triang.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/trislv.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/version.h/1.1.1.1/Wed Sep 11 07:18:37 2002//
+/lapack.h/1.2/Tue Nov 19 16:50:05 2002//
+/cmat.h/1.2/Fri Jan  3 15:54:48 2003//
+/fmat.h/1.2/Fri Jan  3 15:56:25 2003//
+/fspvec.h/1.2/Fri Jan  3 15:56:58 2003//
+/vec.h/1.2/Fri Jan  3 16:00:57 2003//
+/vecadaptor.h/1.2/Fri Jan  3 15:58:15 2003//
+D

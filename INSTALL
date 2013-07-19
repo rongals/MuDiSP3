@@ -1,0 +1,70 @@
+INSTALL INSTRUCTIONS
+  __  __           ____    _   ____    ____    _____ 
+ |  \/  |  _   _  |  _ \  (_) / ___|  |  _ \  |___ / 
+ | |\/| | | | | | | | | | | | \___ \  | |_) |   |_ \ 
+ | |  | | | |_| | | |_| | | |  ___) | |  __/   ___) |
+ |_|  |_|  \__,_| |____/  |_| |____/  |_|     |____/ 
+                                                     
+
+MU ltirate
+DI gital
+S  ignal
+P  rocessor
+
+In order to install MuDiSP3 on your LINUX distribution you must follow
+these steps:
+
+1-
+Be shure to have already installed the following packages on your
+system:
+	gcc version 3.2 (or later)
+	gnuplot 3.7 (or later)
+wou may need also the following packages for Linear Algebra 
+Matrix comptation
+	lapack-3.0
+	blas-3.0
+	
+2-
+the MuDiSP3 libraries are installed in the "/usr/local/mudisp3"
+directory. If you need to change this path edit the main level
+"Makefile" and modify the "MDSP3_SRC" variable
+
+3-
+execute the command "make" from within the MuDiSP3 distribution
+directory
+
+4-
+if the compilation process is successful, become root and execute the
+command "make install" 
+
+5-
+test the installation following the QUICKSTART note in the
+/usr/local/mudisp3/doc directory.
+
+6-
+have fun !
+
+
+**************************************************************
+
+
+MuDiSP3 (Multirate Digital Signal Processor 3)
+Copyright 1999, Luca Simone Ronga
+
+
+ MuDiSP3 is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ MuDiSP3 is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with MuDiSP3; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+

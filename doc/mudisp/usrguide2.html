@@ -1,0 +1,174 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.51 [en] (X11; I; Linux 2.2.5-15smp i686) [Netscape]">
+</head>
+<BODY BGCOLOR="#D8D8BF">
+<h1>
+User's Guide</h1>
+<HR>
+
+<H2><A NAME="step1">How the simulator works</A></H2>
+
+<H3>General concepts</H3>
+
+The simulating environment generated with MuDiSP is composed by blocks which represent the elementary units of the modeled system.<BR>
+Each block, following the object oriented phylosophy, can be used without the knowledge of the effective implementation of its code. The user can imagine it as a "black box"&nbsp;featuring some processing tasks.
+<P>
+The block interacts with the surrounding environments by ports:&nbsp;objects created to deliver data elements of any kind.
+<P>
+The blocks with output ports only are sources of data; the ones with input ports only are data sinks; all the other blocks are processing blocks.
+<P>
+Output ports are connected to input ports by the user in order to build the desired system. These connection can be viewed as very high speed serial connections featuring a FIFO buffering of data objects passing through them.
+<P>
+Output and input ports are specialized by the type of data objects they are called to deliver. For example an output port carring float data elements is called a "float output port"&nbsp;and is created in the C++&nbsp;code by using the standard C++&nbsp;template notation
+<P>
+<CENTER><CODE>OutPort &lt;float&gt; o1;</CODE></CENTER>
+<P>
+Only connections between ports of the same type are allowed, as one may expect. No limitation is imposed on the number of input ports served by a single output port. On the other hand only one output port can be connected to an input port.<BR>The situation is represented in the picture.
+
+<P>
+<CENTER><IMG SRC="figs/sys1.gif" ALT="a simple system"></CENTER>
+<P>
+In the system shown, each time the block <STRONG>B1</STRONG> is activated, it produces a data object and put it in its output port <STRONG>o1</STRONG>.<BR>
+The data is duplicated and delivered to the input ports of blocks <STRONG>B2</STRONG> and <STRONG>B3</STRONG>.<BR>
+Note that the duplication and delivery of the data is performed by the simulator automatically. The user indicates only the desired connections.
+<P>
+<H3>Multirate Systems</H3>
+<P>
+One of the main fatures of this simulator is the full support for multi-rate execution.<BR>A system is called to be multi-rate if there are sections of it running at different clock speeds. Situations like the one depicted in figure often occur in DSP&nbsp;systems.
+<P>
+<CENTER><IMG SRC="figs/sys2.gif" ALT="a multi-rate system"></CENTER>
+<P>
+In the example under each port is indicated the <EM>consumption/production rate</EM> of the port. <EM>It represents the number of data objects produced (for an output port) or consumed (for an input port)&nbsp;by the block at each activation</EM>.
+<P>
+Let's track the data to understand how the multirate situation is managed by the simulator.
+<P>
+<UL>
+<LI>The "Source" block is activated once - a data object is produced from the output port <STRONG>o1</STRONG> of "Source"
+<LI>The "Interpolator" is activated once - consumes <STRONG>one data object from i1</STRONG>, process it and produces <STRONG>10 data objects in o1</STRONG>
+<LI>The "Destination" block is activated 10 times - each activation consumes one data object so the balance is correct if the clock rate of this block is 10 times the interpolator one</UL>
+
+The correct sequence of activations, also called run sequence, is automatically searched by the simulator so that the user does not care about clocks and order of executions.
+<P>
+When the user build his own blocks, declares the <EM>consumption/production rate</EM> for each port. The simulator will use this information to find out the exact run sequence with the appropriate block rates.
+<P>
+I insist on this point: the <EM>block rate</EM> is different from the <EM>consumption/production rate</EM>. The latter is an attribute of each port in the single block and it is independent from the other blocks in the system, so it can be determined during the block design. The former cannot be determined by the block itself but depends on the other blocks connected to it.
+<P>
+In the last example, the block rate of "Destination" is 10 and depends on the "Interpolator block". Another system using the same destination block may attribute to it a different rate.
+<P>
+<H3>The Block design</H3>
+The user can create his own blocks in C++ and use them together with other users' library blocks in the desired system.
+<P>
+Moreover each block behavior can be defined by C++ code (<EM>primitive block</EM>)&nbsp;or by assembling together more blocks from the library (<EM>container block</EM>).<BR> No limitation is imposed on the nesting of container blocks. The hierarchical structure of the simulator allows an easy design of complex system by assembling simpler elements together.
+<P>
+Descending into details (and considering acquired by the user a good knowledge of C++ language)&nbsp; each block is an object of a class derived from the Block class. The Block class is defined in the MuDiSP library.
+<P>
+Each Block object has some main methods defining its behaviour during the simulation. These methods are virtually defined in the Block class from which they inherit the default behavior. The user writing the class MyBlock derived (public) from Block does not need to re-define all the methods in order to create a running block.<BR>The essential methods for both a primitive and a container block are listed into the following example which defines MyPrimitive and MyContainer blocks:
+<P>
+
+
+
+<PRE>
+
+#include "mudisp.h"
+
+class MyPrimitive : public Block {
+private:
+
+// local attributes here
+
+public:
+	MyPrimitive():Block("MyPrimitive");
+	void Setup();
+	void Run();
+	void Finish();
+};
+
+class MyContainer : public Block {
+private:
+
+// local attributes
+// and sub-blocks here
+
+public:
+	MyContainer():Block("MyContainer");
+	void Build();
+	void Setup();
+};
+</PRE>
+
+The meaning of each section is summarized in the following table:
+
+<TABLE BORDER="1" FRAME=lhs>
+<CAPTION> Methods inside a Block</CAPTION>
+<TR>	<TH>Name
+	<TH>Description
+	<TH>Present in primitive
+	<TH>Present in container
+
+<TR>	<TD>constructor
+	<TD>contains the initializations of the attributes, parameters registration and export
+	<TD>yes
+	<TD>yes
+<TR>	<TD>Build()
+	<TD>executed once at the beginning of the simulation, creates the connections in the container blocks
+	<TD>no
+	<TD>yes
+<TR>	<TD>Setup()
+	<TD>executed once at the beginning of the simulation when the parameters are available, set the ports production/consumption rates and initializes the parameters of sub-blocks in the containers
+	<TD>yes
+	<TD>yes
+<TR>	<TD>Run()
+	<TD>at each system iteration this method is executed R&nbsp;times where R is the block rate
+	<TD>yes
+	<TD>no
+<TR>	<TD>Finish()
+	<TD>executed once at the end of the simulation
+	<TD>yes
+	<TD>no
+</TABLE>
+
+<P>
+
+In the constructor of the Block-derived class there are the initializations of the attributes of the class, a call to the Block constructor with the name of the class as argument, parameters initialization and registration (parameters will be explained in the next section). The constructor is executed at the instantiation of the object at the very beginning of the execution of the simulation.
+<P>
+Build() is re-defined only for container blocks. It contains the connections between the blocks objects contained inside. It is executed once per simulation before 
+the parameter are read.
+<P>
+Setup() is also executed once per simulation but after the parameters reading so the parameters value are available. It is present both in primitive blocks and container blocks. In primitive blocks it is used to initialize complex data structures like vectors and to properly declare the rate of the ports. As an example in a block performing a FIR&nbsp; filtering here you put the coefficient initialization. In container blocks it is used to set the parameters for the contained blocks function of the local parameters.
+<P>
+Run() is the hearth of the block. It is executed a number of times depending on the length of the simulation and the block rate. It is present in primitive blocks only and it is responsible for the collection of data from input ports, processing and delivery of data to the output port of the block.
+<P>
+Finish() is executed at the end of the simulation. It is useful for the promitive block that has to post-process the collected data to produce the result. An example I have in mind is the Probability of Error calculation obtained by the error count during the simulation.
+<P>
+A special section is due to the parameters and the way the MuDiSP manages them.
+<P>
+<H3>Parameters</H3>
+
+A parameter is a special variable that can be modified without the need of recompiling the simulator executable. It is very useful in those situations when a batch execution is required. MuDiSP presents a sophisticate management of parameters.
+<P>
+
+The value of a parameter is available when the simulator read the parameter file. This is done BEFORE&nbsp;the call to Setup() method of a block so you can safely use the parameters values in this method. <BR>
+
+Each block is associated a name that is assigned in the constructor with the call to Block("Name").
+The name helps to identify the block in the parameter file. If a block is given the name "MyBlock", each instance of the block will have a name like this:&nbsp;"MyBlock_n" where n is the instance counter starting from 1.<BR>
+
+The system itself is a block (a container block)&nbsp;and its name is "System".<BR>
+
+When a block is contained into another the param file will indicate this dependence with the following line:
+
+<CENTER>System_1.Container_1.Block_1</CENTER>
+
+
+
+
+
+
+<hr WIDTH="100%">
+<A HREF="index.html">Back to HOME</A>
+
+<br>&nbsp;
+</body>
+</html>

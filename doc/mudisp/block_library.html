@@ -1,0 +1,1257 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.51 [en] (X11; I; Linux 2.2.2 i686) [Netscape]">
+</head>
+<BODY BGCOLOR="#D8D8BF">
+<font color="#FF0000">File</font>
+<br><font color="#FF0000">FileCx</font> - doppler coeff. for multipath
+channel model
+<div align=right>
+<hr WIDTH="100%">
+<br><font color="#CC33CC">#include "file.h"</font></div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>File</u>
+<br><u>FileCx</u></blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">File</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>double</td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td></td>
+
+<td>FloatParam</td>
+
+<td>1.0</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br><font color="#000099">FileCx</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td></td>
+
+<td>FloatParam</td>
+
+<td>1.0</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<p><font color="#FF0000">Doppler</font>
+<br><font color="#FF0000">DopplerCx</font> - doppler coeff. for multipath
+channel model
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "doppler.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>Doppler</u> Gives the I or Q component of the complex coefficients
+of the doppler
+<br><u>DopplerCx</u> Gives the complex coefficients of the doppler</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">Doppler</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>double</td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>Var</td>
+
+<td>FloatParam</td>
+
+<td>1.0</td>
+
+<td>variance of the gaussian generator</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br><font color="#000099">DopplerCx</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>Var</td>
+
+<td>FloatParam</td>
+
+<td>1.0</td>
+
+<td>variance of the gaussian generator</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<p><font color="#FF0000">Histogram</font>
+<br><font color="#FF0000">HistogramCx</font> - histogram
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "histogram.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>Histogram</u> Produce histogram of the process with 10 bins.
+<br><u>HistogramCx</u> Produce histogram of the amplitude with 10 bins.</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">Histogram</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in1</td>
+
+<td>double</td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>Inf</td>
+
+<td>FloatParam</td>
+
+<td>0.0</td>
+
+<td>Inferior limit&nbsp;</td>
+</tr>
+
+<tr>
+<td>Sup</td>
+
+<td>FloatParam</td>
+
+<td>1.0</td>
+
+<td>Superior limit&nbsp;</td>
+</tr>
+
+<tr>
+<td>OutFile</td>
+
+<td>StringParam</td>
+
+<td>cout</td>
+
+<td>Outptu file string</td>
+</tr>
+
+<tr>
+<td>Bins</td>
+
+<td>IntParam</td>
+
+<td>10</td>
+
+<td>Number of bins</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br><font color="#000099">HistogramCx</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>Inf</td>
+
+<td>FloatParam</td>
+
+<td>0.0</td>
+
+<td>Inferior limit&nbsp;</td>
+</tr>
+
+<tr>
+<td>Sup</td>
+
+<td>FloatParam</td>
+
+<td>1.0</td>
+
+<td>Superior limit&nbsp;</td>
+</tr>
+
+<tr>
+<td>OutFile</td>
+
+<td>StringParam</td>
+
+<td>cout</td>
+
+<td>Outptu file string</td>
+</tr>
+
+<tr>
+<td>Bins</td>
+
+<td>IntParam</td>
+
+<td>10</td>
+
+<td>Number of bins</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<p><font color="#FF0000">GSMUrban </font><font color="#000000">- GSM urban
+channel</font>
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "gsmurban.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>GSMUrban</u>&nbsp; Produce the GSM channel, with the delay
+parameters and attenuation factors according to the standard GSM Rec. 05.05.
+The delays are fixed and the attenuations give the variance of the Gaussian
+generators of the Doppler</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">File</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>vout1</td>
+
+<td>Vector&lt;double></td>
+
+<td>1</td>
+
+<td>6 complex attenuation phases</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>EbNo</td>
+
+<td>FloatParam</td>
+
+<td>2.0</td>
+
+<td>std=sqrt(0.5*10^(-0.1*EbNo))</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<p><font color="#FF0000">BPSK</font>
+<br><font color="#FF0000">QPSK</font> - PSK modulation
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "psk.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>BPSK</u> +/- 1 (Eb = 1)
+<br><u>QPSK</u> ( 1/sqrt(2) ) * (+/- 1 +/- sqrt(-1) *1 ) (Eb = 1)</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">BPSK</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>double</td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br><font color="#000099">QPSK</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<p><font color="#FF0000">BER</font>
+<br><font color="#FF0000">BERCx</font> - Bit error rate evaluation
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "ber.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>BER</u> Bit error rate between the transmitted (double)
+data and the
+<br>received&nbsp; (double) data. The final vale <b>MUST</b> be divided
+by the
+<br>number of runs
+<br><u>BERCx</u> Bit error rate between the transmitted (complex&lt;double>)
+data and the
+<br>received (complex&lt;double>) data. The final vale <b>MUST</b> be divided
+by the
+<br>number of runs</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">File</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in1</td>
+
+<td>double</td>
+
+<td>1</td>
+
+<td>tx bits</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in2</td>
+
+<td>double</td>
+
+<td>1</td>
+
+<td>rx bits (before quantization)</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br><font color="#000099">BERCx</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>tx bits</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in2</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>rx bits (before quantization)</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<p><font color="#FF0000">Spread</font><font color="#000000"> - spreads
+the input with a real spread-function</font>
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "spread.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>Spread</u> Spreads the input modulated (BPSK-QPSK) signal
+with a spread-sequence of spread factor K with L samples per chips. The
+spreaded sequence is <b>normalized</b> by 1/sqrt(L*K)</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">Spread</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>tx bit</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>vin1</td>
+
+<td>Vector&lt;double></td>
+
+<td>K</td>
+
+<td>spread sequence</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>complex&lt;double></td>
+
+<td>K L</td>
+
+<td>sampled chips</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>K</td>
+
+<td>IntParam</td>
+
+<td>127</td>
+
+<td>spread factor</td>
+</tr>
+
+<tr>
+<td>L</td>
+
+<td>IntParam</td>
+
+<td>5</td>
+
+<td>samples per chip</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<br>&nbsp;
+<p><font color="#FF0000">Read</font>
+<br><font color="#FF0000">ReadCx</font> - reads data from files
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "read.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>Read</u> Reads file with double data
+<br><u>ReadCx</u> Reads file with complex&lt;double> data</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">File</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>double</td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>fname</td>
+
+<td>StringParam</td>
+
+<td>cin</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br><font color="#000099">ReadCx</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>fname</td>
+
+<td>StringParam</td>
+
+<td>cin</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<br>&nbsp;
+<p><font color="#FF0000">Write</font>
+<br><font color="#FF0000">WriteCx</font> - writes data on files
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "write.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>Write</u> Writes file from double data
+<br><u>WriteCx</u> Writes file from complex&lt;double> data</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">Write</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in1</td>
+
+<td>double</td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>fname</td>
+
+<td>StringParam</td>
+
+<td>cout</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br><font color="#000099">WriteCx</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>InPort</td>
+
+<td>in1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>fname</td>
+
+<td>StringParam</td>
+
+<td>cout</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<br>&nbsp;
+<p><font color="#FF0000">SeqGen</font> - Spreading sequence generation
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "seqgen.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>SeqGen</u> Is the spread sequence vector, composed by int
+data +/-1, chosen in a apposite archive</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">SeqGen</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>vout1</td>
+
+<td>Vector&lt;double></td>
+
+<td>1</td>
+
+<td>&nbsp;-</td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>K</td>
+
+<td>IntParam</td>
+
+<td>127</td>
+
+<td>&nbsp;spreading factor</td>
+</tr>
+
+<tr>
+<td>coden</td>
+
+<td>IntParam</td>
+
+<td>1</td>
+
+<td>code number (1-127)</td>
+</tr>
+
+<tr>
+<td>fname</td>
+
+<td>StringParam</td>
+
+<td></td>
+
+<td>GOLD_ARCH/gold_K</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<p><font color="#FF0000">User</font> - user block
+<div align=right>
+<hr WIDTH="100%">
+<br>#include "file.h"</div>
+
+<hr WIDTH="100%">
+<br>Description:
+<blockquote><u>User</u> User block which takes the bit sequence and spread
+out it</blockquote>
+
+<hr WIDTH="100%">
+<br><font color="#000099">User</font>
+<p><font color="#000099">Ports</font>
+<table BORDER COLS=5 WIDTH="100%" NOSAVE >
+<tr>
+<td>&lt;-></td>
+
+<td>name</td>
+
+<td>data type</td>
+
+<td>rate</td>
+
+<td>desc</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out1</td>
+
+<td>complex&lt;double></td>
+
+<td>1</td>
+
+<td>tx bit outport</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>out2</td>
+
+<td>complex&lt;double></td>
+
+<td>K L</td>
+
+<td>spread outport</td>
+</tr>
+
+<tr>
+<td>OutPort</td>
+
+<td>vout1</td>
+
+<td>Vector&lt;complex&lt;double></td>
+
+<td></td>
+
+<td></td>
+</tr>
+</table>
+
+<p><font color="#000099">Parameters</font>
+<table BORDER COLS=4 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+
+<td>type</td>
+
+<td>default value</td>
+
+<td NOSAVE>desc</td>
+</tr>
+
+<tr>
+<td>K</td>
+
+<td>IntParam</td>
+
+<td>127</td>
+
+<td>spread factor</td>
+</tr>
+
+<tr>
+<td>L</td>
+
+<td>IntParam</td>
+
+<td>5</td>
+
+<td>samples per chip</td>
+</tr>
+</table>
+
+<p><font color="#000099">Blocks List</font>
+<table BORDER COLS=1 WIDTH="100%" NOSAVE >
+<tr NOSAVE>
+<td>name</td>
+</tr>
+
+<tr>
+<td>QPSK</td>
+</tr>
+
+<tr>
+<td>SeqGen</td>
+</tr>
+
+<tr>
+<td>SpreadCx</td>
+</tr>
+</table>
+
+<p>
+<hr WIDTH="100%">
+<br>
+<hr WIDTH="100%">
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>

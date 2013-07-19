@@ -1,0 +1,62 @@
+
+  __  __           ____    _   ____    ____    _____ 
+ |  \/  |  _   _  |  _ \  (_) / ___|  |  _ \  |___ / 
+ | |\/| | | | | | | | | | | | \___ \  | |_) |   |_ \ 
+ | |  | | | |_| | | |_| | | |  ___) | |  __/   ___) |
+ |_|  |_|  \__,_| |____/  |_| |____/  |_|     |____/ 
+                                                     
+
+MU ltirate
+DI gital
+S  ignal
+P  rocessor
+
+MuDiSP3 is a communication oriented simulation environment written 
+in the C++ languange. It provides a powerful simulation engine for
+advanced research in the telecommunication area.
+
+Some of the main features:
+
+	* Compound block design with infinite recursion level
+	* Multirate support
+	* Fully automatic fire sequence discovery
+	* Closed loop systems design
+	* human readable parameter files
+	* fast simulation executables
+	* text only interface for remote operations	
+
+For more information visit the INeSiS web site at 
+
+	http://lenst.det.unifi.it/INeSiS
+
+See also:
+ 
+	CONTACT for author's information
+	INSTALL for installation instructions
+	docs/QUICKSTART for a simple demo
+	docs/MIGRATE for information on previuos releases of MuDiSP/INeSiS
+
+
+**************************************************************
+
+
+MuDiSP3 (Multirate Digital Signal Processor 3)
+Copyright 1999, Luca Simone Ronga
+
+
+ MuDiSP3 is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ MuDiSP3 is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with MuDiSP3; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+

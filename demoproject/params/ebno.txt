@@ -1,0 +1,8 @@
+;
+;  Parameters for System_1
+;
+System_1.EbNo:                          1              ; SNR (dB) for desired user
+System_1.EbNo:                          3              ; SNR (dB) for desired user
+System_1.EbNo:                          5              ; SNR (dB) for desired user
+System_1.EbNo:                          7              ; SNR (dB) for desired user
+
